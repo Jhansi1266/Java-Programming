@@ -154,11 +154,330 @@ Programming is used in ATMs, mobile apps, websites, online banking, smart device
       Slower than C and C++
       Uses more memory
       Not suitable for low-level system programming
-## 10. Java Editions
+## # Java Installation & Setup
+
+## 1. Install JDK
+
+To develop Java applications, install the **JDK (Java Development Kit)**.
+
+The JDK provides:
+
+```text
+JDK
+├── java       → Runs Java applications
+├── javac      → Compiles Java source code
+├── jar        → Packages Java applications
+├── javadoc    → Generates documentation
+└── JVM + Java Class Libraries
+```
+
+---
+
+## 2. Configure Environment Variables
+
+### JAVA_HOME
+
+`JAVA_HOME` points to the **JDK installation directory**.
+
+Example:
+
+```text
+JAVA_HOME = C:\Program Files\Java\jdk-xx
+```
+
+### PATH
+
+Add the JDK's `bin` directory to the system PATH:
+
+```text
+%JAVA_HOME%\bin
+```
+
+This allows commands such as `java` and `javac` to be used from any terminal.
+
+---
+
+## 3. Verify Installation
+
+Open Command Prompt or Terminal and run:
+
+```bash
+java -version
+```
+
+Then:
+
+```bash
+javac -version
+```
+
+If both commands return a Java version, the JDK is correctly available.
+
+---
+
+## 4. Test Java Installation
+
+Create:
+
+```text
+Hello.java
+```
+
+Code:
+
+```java
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello Java");
+    }
+}
+```
+
+### Compile
+
+```bash
+javac Hello.java
+```
+
+Output:
+
+```text
+Hello.class
+```
+
+### Run
+
+```bash
+java Hello
+```
+
+Output:
+
+```text
+Hello Java
+```
+
+---
+
+## 5. Complete Java Setup Flow
+
+```text
+Install JDK
+    ↓
+Set JAVA_HOME
+    ↓
+Add JDK/bin to PATH
+    ↓
+java -version
+javac -version
+    ↓
+Write Hello.java
+    ↓
+javac Hello.java
+    ↓
+Hello.class
+    ↓
+java Hello
+    ↓
+JVM executes bytecode
+    ↓
+Output
+```
+
+# 🎯 Interview Points
+
+### What is required to develop Java applications?
+
+> **JDK is required because it provides Java development tools and runtime components.**
+
+### What is JAVA_HOME?
+
+> **JAVA_HOME is an environment variable that points to the JDK installation directory.**
+
+### Why is JDK/bin added to PATH?
+
+> **To make Java commands such as `java` and `javac` available from any terminal.**
+
+### How do you verify Java installation?
+
+> Use `java -version` and `javac -version`.
+
+### What happens during compilation?
+
+> `javac` converts `.java` source code into `.class` bytecode.
+
+### What happens when running the program?
+
+> The `java` launcher starts the JVM, which loads and executes the bytecode.
+
+## ⭐ Quick Revision
+
+```text
+JDK       → Develop Java applications
+JAVA_HOME → JDK location
+PATH      → Java command location
+javac     → Compile
+.java     → Source code
+.class    → Bytecode
+java      → Run
+JVM       → Execute bytecode
+```
+## 11. Java Editions
 ### a. Java SE (Standard Edition)
 Used for desktop applications and core Java development.
 ### b. Jakarta EE (formerly Java EE)
 Used for enterprise and web applications.
 ### c. Java ME (Micro Edition)
 Used for embedded systems and resource-constrained devices.
+## 12. Editors/IDEs
+### 1. What is an Editor?
+An editor is software used to write and edit source code. It generally focuses on text/code editing and may require additional tools to compile and run programs.
+#### Examples:
+      Notepad
+      Notepad++
+      Sublime Text
+      Visual Studio Code (VS Code)
+### 2. What is an IDE?
+IDE (Integrated Development Environment) is software that provides an integrated environment for writing, running, debugging, and managing code.
+#### Examples:
+      IntelliJ IDEA
+      Eclipse
+      NetBeans
+      Visual Studio
+### 3. Editor vs IDE
+### Editor	                                       IDE
+      Mainly used to write/edit code	Provides a complete development environment
+      Usually lightweight	            Usually has more development features
+      May need external compiler/tools	Often integrates compiler, debugger, build tools, etc.
+      Example: Notepad	                  Example: IntelliJ IDEA
+      Example: VS Code	                  Example: Eclipse
+### 4. Is VS Code an Editor or IDE?
+VS Code is primarily a source-code editor.
+However, with extensions and additional development tools, it can provide many IDE-like features,
+#### such as:
+      Code completion
+      Debugging
+      Syntax highlighting
+      Git integration
+      Extensions
+      Project management
+      Java support
+### 5. Visual Studio vs Visual Studio Code
+Visual Studio and Visual Studio Code are different products.
+Visual Studio → Full-featured IDE
+Visual Studio Code → Lightweight, extensible code editor
+### 6. Best Choice for Your Java Learning
+Since you're learning Java from basics, you can use:
+VS Code → lightweight and good for learning
+or
+IntelliJ IDEA → excellent dedicated Java development environment
+or
+Eclipse → widely used Java IDE and good for learning enterprise Java.
+Recommended for your notes
+#### Editors:
+    Notepad
+    Notepad++
+    Sublime Text
+    Visual Studio Code
+
+#### IDEs:
+    IntelliJ IDEA
+    Eclipse
+    NetBeans
+    Visual Studio
+#### Note:
+    VS Code is primarily a code editor, but extensions can provide
+    IDE-like features.
+## 13.JDK, JRE and JVM
+These are very important Java basics. Learn them before starting your first Java program.
+### 1. JDK(Java Development Kit)
+JDK (Java Development Kit) is a software development kit used to develop, compile, debug, document, package, and run Java applications.
+JDK is used to develop Java Applications
+#### Conceptually:
+      JDK
+       ├── Development Tools
+       │    ├── javac (javac stands for Java Compiler. It is a command-line tool included in the    
+                       JDK that compiles Java source code (.java) into bytecode (.class).)
+       │    ├── java (run java programs)
+       │    ├── jar (JAR = Java ARchive. It is used to package and distribute Java classes,
+                     libraries, and resources in a single compressed file.)
+       │    └── javadoc (Javadoc is a JDK tool used to generate HTML documentation from special  
+                         comments written in Java source code.)
+       │
+       └── Runtime Components (Java runtime components include the JVM, Java Class Libraries, and  
+                               supporting runtime files. They provide the environment required to
+                               execute Java applications.)
+            └── JVM (Executes Java Bytecode) + Libraries(Provides reusable java classes and APIs)
+### 2. JRE(Java Runtime Environment)
+JRE is a runtime environment that provides the JVM and Java class libraries required to execute Java applications.
+JRE (Java Runtime Environment) is used to run Java applications.
+#### Conceptually:
+      JRE
+      ├── JVM
+      │    └── Executes Java bytecode (.class)
+      │
+      └── Java Class Libraries
+           └── Provides pre-built Java classes and APIs
+### 3. JVM(Java Virtual Machine)
+JVM is the component of Java that runs Java bytecode and converts it into machine-level instructions that the computer can execute.
+#### Conceptually:
+      Java Program
+          ↓
+      Hello.java
+          ↓
+        javac
+          ↓
+      Hello.class (Bytecode)
+          ↓
+         JVM
+          ↓
+      Machine Code
+          ↓
+      Output
+#### Main responsibilities of JVM
+##### 1. Loads classes
+         Loads .class files into memory.
+##### 2. Verifies bytecode
+         Checks bytecode for safety and correctness.
+##### 3. Executes bytecode
+         Executes Java bytecode using the execution engine.
+##### 4. Memory management
+         Manages memory areas used by Java programs.
+##### 5. Garbage collection
+         Automatically removes objects that are no longer needed.
+##### 6. Provides platform independence
+         The same Java bytecode can run on different operating systems when a suitable JVM is  
+         available.
+##### 7. JIT
+         IT compiler converts frequently executed Java bytecode into native machine code during 
+         program execution to make the program run faster.
+         Uses JIT compilation to improve execution speed
+#### Conceptually: 
+      JVM
+      └── Execution Engine
+          ├── Interpreter(Execute lie by line bytecode to machine code)
+          └── JIT Compiler(Compile and execute faster)
+#### i.Source code:
+Source code is the Java program written by a developer in a .java file.
+#### ii. Bytecode:
+Bytecode is the intermediate code generated by the Java compiler (javac) from the
+### 4.Complete Java Flow
+      Source Code
+         .java
+           ↓
+         javac
+           ↓
+      Bytecode
+         .class
+           ↓
+         JVM
+           ↓
+      Interpreter / JIT
+           ↓
+      Machine Code
+           ↓
+        Output 
+
+
+
 
